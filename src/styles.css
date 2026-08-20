@@ -1,0 +1,155 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * DELICIOUS Cake & Bakery — design system.
+ * Warm ivory / cream surfaces, charcoal type, muted champagne gold accent,
+ * whisper-soft blush. All colors are oklch semantic tokens.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-cream: var(--cream);
+  --color-ivory: var(--ivory);
+  --color-champagne: var(--champagne);
+  --color-champagne-soft: var(--champagne-soft);
+  --color-blush: var(--blush);
+  --color-charcoal: var(--charcoal);
+  --color-whatsapp: var(--whatsapp);
+
+  --shadow-soft: 0 1px 2px oklch(0.28 0.03 60 / 0.04), 0 12px 32px -18px oklch(0.28 0.03 60 / 0.18);
+  --shadow-lift: 0 2px 6px oklch(0.28 0.03 60 / 0.06), 0 28px 60px -28px oklch(0.28 0.03 60 / 0.28);
+  --shadow-frame: 0 40px 80px -40px oklch(0.28 0.03 60 / 0.35);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: oklch(0.985 0.008 85);
+  --foreground: oklch(0.235 0.012 60);
+
+  --card: oklch(0.995 0.004 90);
+  --card-foreground: oklch(0.235 0.012 60);
+  --popover: oklch(0.995 0.004 90);
+  --popover-foreground: oklch(0.235 0.012 60);
+
+  --primary: oklch(0.235 0.012 60);
+  --primary-foreground: oklch(0.985 0.008 85);
+
+  --secondary: oklch(0.965 0.014 84);
+  --secondary-foreground: oklch(0.235 0.012 60);
+
+  --muted: oklch(0.962 0.012 84);
+  --muted-foreground: oklch(0.505 0.018 65);
+
+  --accent: oklch(0.775 0.062 78);
+  --accent-foreground: oklch(0.235 0.012 60);
+
+  --destructive: oklch(0.577 0.19 25);
+  --destructive-foreground: oklch(0.985 0.008 85);
+
+  --border: oklch(0.912 0.014 82);
+  --input: oklch(0.912 0.014 82);
+  --ring: oklch(0.775 0.062 78);
+
+  --ivory: oklch(0.985 0.008 85);
+  --cream: oklch(0.962 0.016 84);
+  --champagne: oklch(0.775 0.062 78);
+  --champagne-soft: oklch(0.9 0.035 82);
+  --blush: oklch(0.925 0.028 40);
+  --charcoal: oklch(0.205 0.01 60);
+  --whatsapp: oklch(0.63 0.16 152);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Small caps label used above section headings */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+/* Thin champagne rule with a centered diamond */
+@utility gold-rule {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-champagne-soft),
+    var(--color-champagne),
+    var(--color-champagne-soft),
+    transparent
+  );
+}
+
+@utility warm-glow {
+  background:
+    radial-gradient(60% 50% at 20% 10%, oklch(0.9 0.035 82 / 0.5), transparent 70%),
+    radial-gradient(45% 45% at 90% 30%, oklch(0.925 0.028 40 / 0.35), transparent 70%);
+}
