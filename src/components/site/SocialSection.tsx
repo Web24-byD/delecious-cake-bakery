@@ -2,10 +2,10 @@ import { Instagram } from "lucide-react";
 import { INSTAGRAM_URL, hasInstagram } from "@/config/business";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-import designerBirthday from "@/assets/cake-designer-birthday.jpg";
+import designerBirthday from "@/assets/cake-designer-birthday.png";
 import blackForest from "@/assets/cake-blackforest.jpg";
 import cupcakes from "@/assets/gallery-cupcakes.jpg";
-import redVelvet from "@/assets/cake-redvelvet.jpg";
+import redVelvet from "@/assets/cake-redvelvet.png";
 import shopCounter from "@/assets/shop-counter.jpg";
 import classicChocolate from "@/assets/cake-classic-chocolate.jpg";
 

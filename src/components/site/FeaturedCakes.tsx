@@ -5,10 +5,10 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import { SectionHeading } from "./SectionHeading";
 import classicChocolate from "@/assets/cake-classic-chocolate.jpg";
 import blackForest from "@/assets/cake-blackforest.jpg";
-import redVelvet from "@/assets/cake-redvelvet.jpg";
-import designerBirthday from "@/assets/cake-designer-birthday.jpg";
-import anniversary from "@/assets/cat-anniversary.jpg";
-import custom from "@/assets/custom-process.jpg";
+import redVelvet from "@/assets/cake-redvelvet.png";
+import designerBirthday from "@/assets/cake-designer-birthday.png";
+import anniversary from "@/assets/cake-anniversary.png";
+import custom from "@/assets/custome-process.png";
 
 type Filter = "All" | "Chocolate" | "Birthday" | "Designer" | "Anniversary";
 

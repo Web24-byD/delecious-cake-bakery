@@ -1,11 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-import catBirthday from "@/assets/cat-birthday.jpg";
-import catAnniversary from "@/assets/cat-anniversary.jpg";
-import catCustom from "@/assets/cat-custom.jpg";
+import catBirthday from "@/assets/cat-birthday.png";
+import catAnniversary from "@/assets/cake-anniversary.png";
+import catCustom from "@/assets/cat-custom.png";
 import catChocolate from "@/assets/cat-chocolate.jpg";
-import catDesigner from "@/assets/cat-designer.jpg";
+import catDesigner from "@/assets/cat-designer.png";
 import catTreats from "@/assets/cat-treats.jpg";
 
 const CATEGORIES = [

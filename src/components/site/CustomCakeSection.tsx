@@ -1,7 +1,7 @@
 import { whatsappLink } from "@/config/business";
 import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import customCake from "@/assets/custom-process.jpg";
+import customCake from "@/assets/custome-process.png";
 
 const STEPS = [
   { no: "01", title: "Choose Your Design", text: "Send us a photo, sketch or simple idea." },

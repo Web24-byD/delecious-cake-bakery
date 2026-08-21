@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { Lightbox, type LightboxImage } from "./Lightbox";
-import designerBirthday from "@/assets/cake-designer-birthday.jpg";
-import catDesigner from "@/assets/cat-designer.jpg";
+import designerBirthday from "@/assets/cake-designer-birthday.png";
+import catDesigner from "@/assets/cat-designer.png";
 import catChocolate from "@/assets/cat-chocolate.jpg";
 import blackForest from "@/assets/cake-blackforest.jpg";
-import redVelvet from "@/assets/cake-redvelvet.jpg";
+import redVelvet from "@/assets/cake-redvelvet.png";
 import cupcakes from "@/assets/gallery-cupcakes.jpg";
-import shopInterior from "@/assets/shop-interior.jpg";
+import shopInterior from "@/assets/shop-interior.png";
 import shopCounter from "@/assets/shop-counter.jpg";
-import occOther from "@/assets/occ-other.jpg";
+import occOther from "@/assets/occ-other.png";
 
 const IMAGES: LightboxImage[] = [
   {

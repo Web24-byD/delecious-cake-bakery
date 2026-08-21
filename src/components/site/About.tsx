@@ -1,6 +1,6 @@
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
-import shopInterior from "@/assets/shop-interior.jpg";
+import shopInterior from "@/assets/shop-interior.png";
 
 const VALUES = [
   { title: "Freshly Made", text: "Baked close to your collection time." },

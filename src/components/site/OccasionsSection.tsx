@@ -1,9 +1,9 @@
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-import catBirthday from "@/assets/cat-birthday.jpg";
-import catAnniversary from "@/assets/cat-anniversary.jpg";
+import catBirthday from "@/assets/cat-birthday.png";
+import catAnniversary from "@/assets/cake-anniversary.png";
 import occBaby from "@/assets/occ-baby.jpg";
-import occOther from "@/assets/occ-other.jpg";
+import occOther from "@/assets/occ-other.png";
 
 const OCCASIONS = [
   {

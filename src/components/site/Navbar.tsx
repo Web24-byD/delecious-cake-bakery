@@ -36,7 +36,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-1000 transition-all duration-500",
         scrolled
           ? "border-b border-border/70 bg-ivory/92 backdrop-blur-md"
           : "border-b border-transparent bg-ivory/30 backdrop-blur-sm",
@@ -68,14 +68,21 @@ export function Navbar() {
           </a>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          className="shrink-0 rounded-full p-2 text-foreground transition-colors hover:bg-cream lg:hidden"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+  <button
+  type="button"
+  onClick={() => setOpen(true)}
+  aria-label="Open menu"
+  className="shrink-0 rounded-full p-3 text-foreground
+    bg-white/40
+    backdrop-blur-xl
+    border border-white/60
+    shadow-[0_8px_30px_rgba(0,0,0,0.10)]
+    transition-all duration-300
+    hover:bg-white/55
+    lg:hidden"
+>
+  <Menu className="h-6 w-6" />
+</button>
       </div>
 
       <AnimatePresence>
@@ -85,9 +92,9 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 flex flex-col bg-ivory lg:hidden"
+             className="fixed inset-0 z-9999 flex min-h-screen flex-col overflow-y-auto bg-[#F8F5EE] lg:hidden"
           >
-            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3.5">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-black/10 bg-[#F8F5EE] px-5 py-3.5">
               <Logo />
               <button
                 type="button"
@@ -99,7 +106,7 @@ export function Navbar() {
               </button>
             </div>
 
-            <nav className="flex flex-1 flex-col justify-center gap-1 px-7">
+            <nav className="flex flex-1 flex-col justify-center gap-1 bg-[#F8F5EE] px-7">
               {LINKS.map((l, i) => (
                 <motion.a
                   key={l.href}

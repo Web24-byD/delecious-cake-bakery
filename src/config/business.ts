@@ -21,7 +21,7 @@ export const WHATSAPP_NUMBER = "919913154636";
 /** Display / tel: number, e.g. "+91 98765 43210". Leave "" if unknown. */
 export const PHONE_NUMBER = "+919913154636";
 /** Full Instagram profile URL. Leave "" if unknown. */
-export const INSTAGRAM_URL = "";
+export const INSTAGRAM_URL = "https://www.instagram.com/delicious_cake_n_bakery/?utm_source=chatgpt.com";
 /** Google Maps link or embed URL for the shop. Leave "" to use an address search. */
 export const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);

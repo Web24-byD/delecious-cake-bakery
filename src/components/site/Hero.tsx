@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowDown, Sparkles } from "lucide-react";
 import { whatsappLink } from "@/config/business";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import heroCake from "@/assets/hero-cake.jpg";
+import heroCake from "@/assets/hero-cake.png";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
