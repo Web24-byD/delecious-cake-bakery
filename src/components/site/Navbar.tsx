@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { whatsappLink } from "@/config/business";
+import { hasWhatsApp, whatsappLink } from "@/config/business";
 import { Logo } from "./Logo";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
@@ -21,13 +21,17 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
+
     onScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -43,10 +47,16 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3.5 lg:px-8">
-        <a href="#home" className="min-w-0" aria-label="DELICIOUS Cake & Bakery by Tanvi — home">
+        {/* Logo */}
+        <a
+          href="#home"
+          className="min-w-0"
+          aria-label="Home"
+        >
           <Logo />
         </a>
 
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
           {LINKS.map((l) => (
             <a
@@ -57,34 +67,33 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex shrink-0 items-center gap-2 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-ivory transition-all duration-300 hover:bg-foreground hover:shadow-soft"
-          >
-            <WhatsAppIcon className="h-4 w-4" />
-            Order on WhatsApp
-          </a>
+
+          {/* Desktop WhatsApp Button */}
+          {hasWhatsApp && (
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex shrink-0 items-center gap-2 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-ivory transition-all duration-300 hover:bg-foreground hover:shadow-soft"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              Order on WhatsApp
+            </a>
+          )}
         </nav>
 
-  <button
-  type="button"
-  onClick={() => setOpen(true)}
-  aria-label="Open menu"
-  className="shrink-0 rounded-full p-3 text-foreground
-    bg-white/40
-    backdrop-blur-xl
-    border border-white/60
-    shadow-[0_8px_30px_rgba(0,0,0,0.10)]
-    transition-all duration-300
-    hover:bg-white/55
-    lg:hidden"
->
-  <Menu className="h-6 w-6" />
-</button>
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+          className="shrink-0 rounded-full border border-white/60 bg-white/40 p-3 text-foreground shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:bg-white/55 lg:hidden"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -92,10 +101,12 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-             className="fixed inset-0 z-9999 flex min-h-screen flex-col overflow-y-auto bg-[#F8F5EE] lg:hidden"
+            className="fixed inset-0 z-9999 flex min-h-screen flex-col overflow-y-auto bg-[#F8F5EE] lg:hidden"
           >
+            {/* Mobile Header */}
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-black/10 bg-[#F8F5EE] px-5 py-3.5">
               <Logo />
+
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -106,6 +117,7 @@ export function Navbar() {
               </button>
             </div>
 
+            {/* Mobile Navigation */}
             <nav className="flex flex-1 flex-col justify-center gap-1 bg-[#F8F5EE] px-7">
               {LINKS.map((l, i) => (
                 <motion.a
@@ -114,7 +126,10 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.06 * i + 0.05, duration: 0.4 }}
+                  transition={{
+                    delay: 0.06 * i + 0.05,
+                    duration: 0.4,
+                  }}
                   className="border-b border-border/60 py-4 font-display text-2xl text-foreground"
                 >
                   {l.label}
@@ -122,18 +137,21 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div className="px-7 pb-10">
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp px-6 py-4 text-base font-medium text-ivory shadow-soft"
-              >
-                <WhatsAppIcon className="h-5 w-5" />
-                Order on WhatsApp
-              </a>
-            </div>
+            {/* Mobile WhatsApp Button */}
+            {hasWhatsApp && (
+              <div className="px-7 pb-10">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp px-6 py-4 text-base font-medium text-ivory shadow-soft"
+                >
+                  <WhatsAppIcon className="h-5 w-5" />
+                  Order on WhatsApp
+                </a>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
